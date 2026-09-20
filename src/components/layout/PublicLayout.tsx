@@ -9,16 +9,16 @@ import { useAuth } from "@/hooks/useAuth";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { to: "/", label: "Home" },
-  { to: "/features", label: "Features" },
-  { to: "/pricing", label: "Pricing" },
-  { to: "/contact", label: "Contact" },
+  { to: "/#features", label: "Features" },
+  { to: "/#how-it-works", label: "How it works" },
+  { to: "/#product", label: "Product" },
+  { to: "/#contact", label: "Contact" },
 ] as const;
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const { user } = useAuth();
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const pathname = useRouterState({ select: (s) => s.location.pathname + s.location.hash });
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 shadow-[0_1px_0_color-mix(in_oklch,var(--color-card)_60%,transparent)] backdrop-blur-2xl">
@@ -41,7 +41,7 @@ export function SiteHeader() {
                 to={link.to}
                 className={cn(
                   "rounded-xl px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary/70 hover:text-foreground",
-                  pathname === link.to && "bg-navy text-navy-foreground shadow-sm",
+                  pathname === link.to.replace("/", "") && "bg-navy text-navy-foreground shadow-sm",
                 )}
               >
                 {link.label}
@@ -62,7 +62,7 @@ export function SiteHeader() {
                 <Link to="/login">Sign in</Link>
               </Button>
               <Button asChild className="shadow-[var(--shadow-soft)]">
-                <Link to="/register">Start free</Link>
+                <Link to="/register">Request Access</Link>
               </Button>
             </>
           )}
@@ -107,7 +107,7 @@ export function SiteHeader() {
                     <Link to="/login">Sign in</Link>
                   </Button>
                   <Button asChild onClick={() => setOpen(false)}>
-                    <Link to="/register">Start free</Link>
+                    <Link to="/register">Request Access</Link>
                   </Button>
                 </>
               )}
@@ -126,7 +126,8 @@ export function SiteFooter() {
         <div>
           <LogoLockup />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            AI customer engagement for teams whose business never sleeps.
+            AI-powered customer engagement for websites and WhatsApp. Built by Dani-Tech to help
+            businesses respond, recommend, and convert around the clock.
           </p>
         </div>
         <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
@@ -146,7 +147,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border/70">
         <p className="mx-auto w-full max-w-6xl px-4 py-4 text-xs text-muted-foreground sm:px-6">
-          © {new Date().getFullYear()} ConversaAI. All rights reserved.
+          Copyright © {new Date().getFullYear()} Dani-Tech. All rights reserved.
         </p>
       </div>
     </footer>
