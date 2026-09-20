@@ -104,10 +104,10 @@ function HomePage() {
             </p>
             <div className="mt-9 flex animate-slide-up flex-col gap-3 sm:flex-row" style={{ animationDelay: "140ms" }}>
               <Button asChild size="lg" className="h-13 px-6 shadow-[var(--shadow-card)]">
-                <Link to="/contact" className="w-full sm:w-auto">Book a Demo <ArrowRight className="h-4 w-4" /></Link>
+                <Link to="/register" className="w-full sm:w-auto">Get started <ArrowRight className="h-4 w-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-13 px-6">
-                <Link to="/contact" className="w-full sm:w-auto">Book a Demo</Link>
+                <Link to="/login" className="w-full sm:w-auto">Sign in</Link>
               </Button>
             </div>
             <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-muted-foreground">

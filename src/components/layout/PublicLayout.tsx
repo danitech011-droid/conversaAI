@@ -116,7 +116,7 @@ export function SiteHeader() {
             </li>
             <li className="border-t border-border pt-3">
               <Button asChild variant="outline" className="w-full" onClick={() => setOpen(false)}>
-                <Link to="/contact">Book a Demo</Link>
+                <Link to="/register">Get started</Link>
               </Button>
             </li>
           </ul>
