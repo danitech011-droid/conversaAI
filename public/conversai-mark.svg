@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="ConversaAI">
+  <defs>
+    <linearGradient id="c-mark-gradient" x1="18" y1="12" x2="102" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a2e4a"/>
+      <stop offset="1" stop-color="#00b8c8"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#c-mark-gradient)" d="M60 8c-28.7 0-52 23.3-52 52 0 18.4 9.6 34.6 24 43.8V88c0-3.3 2.7-6 6-6h8.2c7.8 5.4 17.3 8.6 27.5 8.6 28.7 0 52-23.3 52-52S88.7 8 60 8Zm0 12c22.1 0 40 17.9 40 40s-17.9 40-40 40c-8.2 0-15.8-2.5-22.1-6.7-1.8-1.2-4.1-.1-4.1 2.2v8.4C24.8 94.2 20 83.5 20 72c0-22.1 17.9-40 40-40Z"/>
+  <path fill="#fff" d="M42 44c0-4.4 3.6-8 8-8h20c4.4 0 8 3.6 8 8v14c0 4.4-3.6 8-8 8H56l-8 8v-6.2c-4.4 0-8-3.6-8-8V44Z"/>
+  <circle cx="52" cy="55" r="3.2" fill="#00b8c8"/>
+  <circle cx="60" cy="55" r="3.2" fill="#00b8c8"/>
+  <circle cx="68" cy="55" r="3.2" fill="#00b8c8"/>
+  <path stroke="#00b8c8" stroke-width="3.2" stroke-linecap="round" d="M88 42h14M88 54h16M88 66h14M88 78h12"/>
+  <circle cx="104" cy="42" r="3.2" fill="#00b8c8"/>
+  <circle cx="106" cy="54" r="3.2" fill="#00b8c8"/>
+  <circle cx="104" cy="66" r="3.2" fill="#00b8c8"/>
+  <circle cx="102" cy="78" r="3.2" fill="#00b8c8"/>
+  <path fill="#00b8c8" d="M92 18 94.8 24.6 102 25.4 96.5 30.2 98.1 37.2 92 33.4 85.9 37.2 87.5 30.2 82 25.4 89.2 24.6Z"/>
+  <path fill="#1a2e4a" d="M104 10 105.4 13.8 109.4 14.2 106.4 16.8 107.2 20.8 104 18.8 100.8 20.8 101.6 16.8 98.6 14.2 102.6 13.8Z"/>
+</svg>

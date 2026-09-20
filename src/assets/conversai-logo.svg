@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 420" role="img" aria-label="ConversaAI  Your Business Never Sleeps">
+  <defs>
+    <linearGradient id="c-logo-gradient" x1="54" y1="36" x2="306" y2="324" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a2e4a"/>
+      <stop offset="1" stop-color="#00b8c8"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(60 20)">
+    <path fill="url(#c-logo-gradient)" d="M120 8c-66.3 0-120 53.7-120 120 0 42.5 22.1 79.9 55.5 101.3V200c0-7.6 6.2-13.8 13.8-13.8h19c18 12.5 40 19.8 63.5 19.8 66.3 0 120-53.7 120-120S186.3 8 120 8Zm0 28c50.8 0 92 41.2 92 92s-41.2 92-92 92c-18.9 0-36.5-5.7-51.1-15.3-4.1-2.7-9.4-.2-9.4 4.9v19.2C49.6 220.4 40 196.5 40 172c0-50.8 41.2-92 92-92Z"/>
+    <path fill="#fff" d="M84 88c0-8.8 7.2-16 16-16h40c8.8 0 16 7.2 16 16v28c0 8.8-7.2 16-16 16h-28l-16 16v-12.4c-8.8 0-16-7.2-16-16V88Z"/>
+    <circle cx="104" cy="110" r="6.4" fill="#00b8c8"/>
+    <circle cx="120" cy="110" r="6.4" fill="#00b8c8"/>
+    <circle cx="136" cy="110" r="6.4" fill="#00b8c8"/>
+    <path stroke="#00b8c8" stroke-width="6.4" stroke-linecap="round" d="M176 84h28M176 108h32M176 132h28M176 156h24"/>
+    <circle cx="208" cy="84" r="6.4" fill="#00b8c8"/>
+    <circle cx="212" cy="108" r="6.4" fill="#00b8c8"/>
+    <circle cx="208" cy="132" r="6.4" fill="#00b8c8"/>
+    <circle cx="204" cy="156" r="6.4" fill="#00b8c8"/>
+    <path fill="#00b8c8" d="M184 36 189.6 49.2 204 50.8 193 60.4 196.2 74.4 184 66.8 171.8 74.4 175 60.4 164 50.8 178.4 49.2Z"/>
+    <path fill="#1a2e4a" d="M208 20 210.8 27.6 219.2 28.4 212.8 33.6 214.4 41.6 208 37.6 201.6 41.6 203.2 33.6 196.8 28.4 205.2 27.6Z"/>
+  </g>
+  <text x="180" y="318" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="52" font-weight="700" fill="#1a2e4a">Conversa<tspan fill="#00b8c8">AI</tspan></text>
+  <line x1="44" y1="352" x2="108" y2="352" stroke="#00b8c8" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="180" y="360" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="500" fill="#1a2e4a">Your Business Never Sleeps.</text>
+  <line x1="252" y1="352" x2="316" y2="352" stroke="#00b8c8" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

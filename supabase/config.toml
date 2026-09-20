@@ -1,0 +1,10 @@
+# ConversaAI — Cursor-connected Supabase project
+project_id = "aubuyrglcxccileglcvc"
+
+[auth]
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+# Pre-launch: disable email confirmation. Re-enable before production.
+enable_confirmations = false
