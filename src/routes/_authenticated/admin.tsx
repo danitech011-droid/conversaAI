@@ -2,7 +2,7 @@ import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Activity, ArrowUpRight, Globe2, Mail, Users } from "lucide-react";
 
-import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
+import { AdminLayout } from "@/components/admin/AdminLayout";
 import { Skeleton } from "@/components/ui/skeleton";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -63,7 +63,7 @@ function AdminPage() {
   const todayVisitors = visitors.filter((visitor) => new Date(visitor.created_at).toDateString() === today).length;
 
   return (
-    <DashboardLayout title="Admin console" description="Website leads and visitor activity">
+    <AdminLayout>
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-medium text-cyan">ConversaAI operations</p>
@@ -93,7 +93,7 @@ function AdminPage() {
           <div className="mt-5 flex items-center gap-2 border-t border-border pt-4 text-xs text-muted-foreground"><ArrowUpRight className="h-4 w-4 text-cyan" />Visitor data updates as people browse your site.</div>
         </section>
       </div>
-    </DashboardLayout>
+    </AdminLayout>
   );
 }
 

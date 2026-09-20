@@ -26,7 +26,12 @@ export function AuthLayout({ title, description, children, footer }: AuthLayoutP
           aria-label="ConversaAI home"
           className="mx-auto mb-6 flex w-fit items-center justify-center rounded-lg"
         >
-          <Logo />
+          <span className="flex flex-col items-center gap-3">
+            <Logo variant="mark" className="h-14 w-14 drop-shadow-[0_10px_24px_rgba(37,99,235,0.2)]" />
+            <span className="text-lg font-bold tracking-tight text-navy dark:text-slate-50">
+              Conversa<span className="text-cyan">AI</span>
+            </span>
+          </span>
         </Link>
 
         <div className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-elevated)] sm:p-8">
