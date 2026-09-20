@@ -21,23 +21,27 @@ export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/70 backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 shadow-[0_1px_0_color-mix(in_oklch,var(--color-card)_60%,transparent)] backdrop-blur-2xl">
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6"
+        className="mx-auto flex h-[4.5rem] w-full max-w-6xl items-center justify-between px-4 sm:px-6"
       >
-        <Link to="/" aria-label="ConversaAI home" className="rounded-md transition-opacity hover:opacity-90">
+        <Link
+          to="/"
+          aria-label="ConversaAI home"
+          className="rounded-xl transition-transform hover:scale-[1.01]"
+        >
           <LogoLockup />
         </Link>
 
-        <ul className="hidden items-center gap-0.5 md:flex">
+        <ul className="hidden items-center gap-1 rounded-2xl border border-border/70 bg-card/60 p-1 shadow-[var(--shadow-soft)] md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.to}>
               <Link
                 to={link.to}
                 className={cn(
-                  "rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary/70 hover:text-foreground",
-                  pathname === link.to && "bg-secondary/80 text-foreground",
+                  "rounded-xl px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary/70 hover:text-foreground",
+                  pathname === link.to && "bg-navy text-navy-foreground shadow-sm",
                 )}
               >
                 {link.label}
