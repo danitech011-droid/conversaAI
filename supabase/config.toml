@@ -1,5 +1,5 @@
-# ConversaAI — Cursor-connected Supabase project
-project_id = "aubuyrglcxccileglcvc"
+# ConversaAI Supabase project
+project_id = "fknpsngviuzgwovnmafn"
 
 [auth]
 enable_signup = true
