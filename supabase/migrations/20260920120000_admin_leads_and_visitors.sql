@@ -64,3 +64,31 @@ CREATE POLICY "Admins can view visitor events"
 CREATE INDEX IF NOT EXISTS website_leads_created_at_idx ON public.website_leads (created_at DESC);
 CREATE INDEX IF NOT EXISTS visitor_events_created_at_idx ON public.visitor_events (created_at DESC);
 CREATE INDEX IF NOT EXISTS visitor_events_session_id_idx ON public.visitor_events (session_id);
+
+CREATE OR REPLACE FUNCTION public.claim_first_admin()
+RETURNS BOOLEAN
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+DECLARE
+  current_email TEXT;
+BEGIN
+  IF auth.uid() IS NULL THEN
+    RETURN FALSE;
+  END IF;
+
+  IF EXISTS (SELECT 1 FROM public.admin_users) THEN
+    RETURN EXISTS (SELECT 1 FROM public.admin_users WHERE user_id = auth.uid());
+  END IF;
+
+  SELECT email INTO current_email FROM auth.users WHERE id = auth.uid();
+  INSERT INTO public.admin_users (user_id, email)
+  VALUES (auth.uid(), COALESCE(current_email, ''))
+  ON CONFLICT (user_id) DO NOTHING;
+  RETURN TRUE;
+END;
+$$;
+
+REVOKE ALL ON FUNCTION public.claim_first_admin() FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.claim_first_admin() TO authenticated;
