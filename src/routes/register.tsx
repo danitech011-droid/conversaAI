@@ -149,6 +149,14 @@ function RegisterPage() {
     }
 
     toast.success("Account created");
+    const { data: claimedAdmin, error: adminClaimError } = await supabase.rpc("claim_first_admin");
+    if (adminClaimError) {
+      console.error("[Admin] Could not claim first-account access", adminClaimError);
+    }
+    if (claimedAdmin === true) {
+      navigate({ to: "/admin", replace: true });
+      return;
+    }
     const to = await resolvePostLoginPath(userId);
     navigate({ to, replace: true });
   }

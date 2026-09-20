@@ -11,7 +11,10 @@ export const Route = createFileRoute("/_authenticated/admin")({
     const { data } = await supabase.auth.getUser();
     if (!data.user) throw redirect({ to: "/login" });
 
-    await supabase.rpc("claim_first_admin");
+    const { error: claimError } = await supabase.rpc("claim_first_admin");
+    if (claimError) {
+      console.error("[Admin] First-account claim failed. Apply the admin migration.", claimError);
+    }
     const { data: admin } = await supabase
       .from("admin_users")
       .select("user_id")
