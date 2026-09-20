@@ -134,10 +134,10 @@
   --radius: 0.75rem;
   color-scheme: light;
 
-  --background: oklch(0.99 0.004 247);
+  --background: oklch(0.985 0.006 247);
   --foreground: oklch(0.22 0.035 264);
 
-  --card: oklch(1 0 0);
+  --card: oklch(0.998 0.002 247);
   --card-foreground: oklch(0.22 0.035 264);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.22 0.035 264);
@@ -147,7 +147,7 @@
 
   --secondary: oklch(0.965 0.008 247);
   --secondary-foreground: oklch(0.22 0.035 264);
-  --surface: oklch(0.975 0.006 247);
+  --surface: oklch(0.965 0.009 247);
 
   --muted: oklch(0.965 0.008 247);
   --muted-foreground: oklch(0.45 0.03 257);
@@ -167,7 +167,7 @@
   --warning: oklch(0.78 0.16 70);
   --warning-foreground: oklch(0.28 0.05 70);
 
-  --border: oklch(0.91 0.012 255);
+  --border: oklch(0.89 0.016 255);
   --input: oklch(0.91 0.012 255);
   --ring: oklch(0.55 0.2 258);
 
@@ -195,10 +195,10 @@
   color-scheme: dark;
 
   /* Near-black canvas with a cool undertone — distinct from navy CTAs and cards */
-  --background: oklch(0.145 0.02 264);
+  --background: oklch(0.13 0.018 264);
   --foreground: oklch(0.97 0.008 247);
 
-  --card: oklch(0.225 0.03 264);
+  --card: oklch(0.205 0.028 264);
   --card-foreground: oklch(0.97 0.008 247);
   --popover: oklch(0.225 0.03 264);
   --popover-foreground: oklch(0.97 0.008 247);
@@ -208,7 +208,7 @@
 
   --secondary: oklch(0.24 0.03 264);
   --secondary-foreground: oklch(0.97 0.008 247);
-  --surface: oklch(0.175 0.024 264);
+  --surface: oklch(0.165 0.022 264);
 
   --muted: oklch(0.24 0.03 264);
   --muted-foreground: oklch(0.78 0.025 250);
@@ -228,7 +228,7 @@
   --warning: oklch(0.82 0.14 75);
   --warning-foreground: oklch(0.22 0.05 75);
 
-  --border: oklch(0.34 0.028 264);
+  --border: oklch(0.31 0.026 264);
   --input: oklch(0.34 0.028 264);
   --ring: oklch(0.7 0.16 255);
 

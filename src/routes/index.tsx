@@ -104,7 +104,7 @@ function HomePage() {
             </p>
             <div className="mt-9 flex animate-slide-up flex-col gap-3 sm:flex-row" style={{ animationDelay: "140ms" }}>
               <Button asChild size="lg" className="h-13 px-6 shadow-[var(--shadow-card)]">
-                <Link to="/register">Request Early Access <ArrowRight className="h-4 w-4" /></Link>
+                <Link to="/contact">Book a Demo <ArrowRight className="h-4 w-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-13 px-6">
                 <Link to="/contact">Book a Demo</Link>
@@ -190,7 +190,7 @@ function HomePage() {
               <Sparkles className="mx-auto h-7 w-7 text-cyan" />
               <h2 className="mt-5 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Ready to transform your customer experience?</h2>
               <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">Join businesses preparing for the future of customer engagement with ConversaAI.</p>
-              <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><Button asChild size="lg"><Link to="/register">Join the Waitlist <ArrowRight className="h-4 w-4" /></Link></Button><Button asChild size="lg" variant="outline"><Link to="/contact">Contact Us</Link></Button></div>
+              <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><Button asChild size="lg"><Link to="/register">Get started <ArrowRight className="h-4 w-4" /></Link></Button><Button asChild size="lg" variant="outline"><Link to="/contact">Contact Us</Link></Button></div>
             </div>
           </div>
         </div>
@@ -254,5 +254,5 @@ function ContactLine({ label, value }: { label: string; value: string }) {
 }
 
 function ContactFormPreview() {
-  return <div className="rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] sm:p-8"><div className="grid gap-5 sm:grid-cols-2"><label className="text-sm font-medium text-foreground">Full Name<input className="mt-2 h-11 w-full rounded-xl border border-input bg-background px-3 text-sm outline-none transition-colors focus:border-primary" placeholder="Your name" /></label><label className="text-sm font-medium text-foreground">Company Name<input className="mt-2 h-11 w-full rounded-xl border border-input bg-background px-3 text-sm outline-none transition-colors focus:border-primary" placeholder="Your company" /></label><label className="text-sm font-medium text-foreground">Business Email<input type="email" className="mt-2 h-11 w-full rounded-xl border border-input bg-background px-3 text-sm outline-none transition-colors focus:border-primary" placeholder="you@company.com" /></label><label className="text-sm font-medium text-foreground">Business Type<select className="mt-2 h-11 w-full rounded-xl border border-input bg-background px-3 text-sm outline-none transition-colors focus:border-primary" defaultValue=""><option value="" disabled>Select an industry</option>{INDUSTRIES.slice(0, -1).map((industry) => <option key={industry}>{industry}</option>)}</select></label><label className="text-sm font-medium text-foreground sm:col-span-2">Message<textarea className="mt-2 min-h-28 w-full resize-y rounded-xl border border-input bg-background px-3 py-3 text-sm outline-none transition-colors focus:border-primary" placeholder="Tell us about your customer workflow" /></label></div><Button className="mt-5 w-full sm:w-auto">Send Message <ArrowRight className="h-4 w-4" /></Button></div>;
+  return <div className="rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] sm:p-8"><div className="rounded-2xl bg-surface p-5"><p className="text-sm font-semibold text-foreground">Tell us about your customer workflow</p><p className="mt-2 text-sm leading-relaxed text-muted-foreground">Share your goals, channels, and current support setup. Your message goes directly to the ConversaAI admin workspace.</p><div className="mt-5 grid gap-3 sm:grid-cols-2"><div className="h-11 rounded-xl border border-border bg-background" /><div className="h-11 rounded-xl border border-border bg-background" /><div className="h-11 rounded-xl border border-border bg-background sm:col-span-2" /><div className="h-24 rounded-xl border border-border bg-background sm:col-span-2" /></div></div><Button asChild className="mt-5 w-full sm:w-auto"><Link to="/contact">Open contact form <ArrowRight className="h-4 w-4" /></Link></Button></div>;
 }

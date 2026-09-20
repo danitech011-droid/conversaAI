@@ -29,7 +29,11 @@ export function ThemeToggle({
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       aria-pressed={isDark}
-      className={cn(showLabel && "gap-2", className)}
+      className={cn(
+        "border border-border/70 bg-card/70 text-muted-foreground shadow-[var(--shadow-soft)] hover:bg-secondary hover:text-foreground",
+        showLabel && "gap-2",
+        className,
+      )}
     >
       {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
       {showLabel ? <span className="text-xs font-medium">{isDark ? "Light" : "Dark"}</span> : null}

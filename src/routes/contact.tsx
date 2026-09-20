@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -47,7 +48,7 @@ function ContactPage() {
   const [errors, setErrors] = useState<Errors>({});
   const [loading, setLoading] = useState(false);
 
-  function handleSubmit(event: React.FormEvent) {
+  async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     const parsed = contactSchema.safeParse(values);
 
@@ -62,14 +63,26 @@ function ContactPage() {
 
     setErrors({});
     setLoading(true);
-    // Sprint 1 scope: no messaging backend yet, so we acknowledge locally.
-    setTimeout(() => {
-      setLoading(false);
-      setValues({ name: "", email: "", message: "" });
-      toast.success("Message sent", {
-        description: "Our team will get back to you within one business day.",
+    const { name, email, message } = parsed.data;
+    const { error } = await supabase.from("website_leads").insert({
+      name,
+      email,
+      message,
+      source: "contact_page",
+    });
+    setLoading(false);
+
+    if (error) {
+      toast.error("Message could not be sent", {
+        description: "Please try again or email us directly.",
       });
-    }, 700);
+      return;
+    }
+
+    setValues({ name: "", email: "", message: "" });
+    toast.success("Message sent", {
+      description: "Our team will get back to you within one business day.",
+    });
   }
 
   return (

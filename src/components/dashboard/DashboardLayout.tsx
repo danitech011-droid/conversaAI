@@ -16,6 +16,7 @@ import {
   Radio,
   Settings,
   Sparkles,
+  ShieldCheck,
   Square,
   Users,
   UserSquare2,
@@ -56,6 +57,7 @@ export const NAV_ITEMS: NavItem[] = [
   { to: "/conversations", label: "Conversations", icon: MessageSquare, soon: true },
   { to: "/analytics", label: "Analytics", icon: BarChart3, soon: true },
   { to: "/settings", label: "Settings", icon: Settings },
+  { to: "/admin", label: "Admin console", icon: ShieldCheck },
 ];
 
 

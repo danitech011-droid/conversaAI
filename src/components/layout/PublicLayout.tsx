@@ -1,11 +1,13 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useEffect } from "react";
 
 import { LogoLockup } from "@/components/brand/Logo";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
+import { supabase } from "@/integrations/supabase/client";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -62,7 +64,7 @@ export function SiteHeader() {
                 <Link to="/login">Sign in</Link>
               </Button>
               <Button asChild className="shadow-[var(--shadow-soft)]">
-                <Link to="/register">Request Access</Link>
+                <Link to="/register">Get started</Link>
               </Button>
             </>
           )}
@@ -107,7 +109,7 @@ export function SiteHeader() {
                     <Link to="/login">Sign in</Link>
                   </Button>
                   <Button asChild onClick={() => setOpen(false)}>
-                    <Link to="/register">Request Access</Link>
+                    <Link to="/register">Get started</Link>
                   </Button>
                 </>
               )}
@@ -155,6 +157,21 @@ export function SiteFooter() {
 }
 
 export function PublicLayout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    const storageKey = "conversaai-visitor-session";
+    const sessionId = window.localStorage.getItem(storageKey) ?? crypto.randomUUID();
+    window.localStorage.setItem(storageKey, sessionId);
+    const deviceType = window.matchMedia("(max-width: 767px)").matches ? "mobile" : "desktop";
+
+    void supabase.from("visitor_events").insert({
+      session_id: sessionId,
+      path: window.location.pathname,
+      referrer: document.referrer || null,
+      user_agent: navigator.userAgent,
+      device_type: deviceType,
+    });
+  }, []);
+
   return (
     <div className="relative flex min-h-dvh flex-col bg-background surface-glow">
       <SiteHeader />
