@@ -9,7 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 export const Route = createFileRoute("/_authenticated/admin")({
   beforeLoad: async () => {
     const { data } = await supabase.auth.getUser();
-    if (!data.user) throw redirect({ to: "/login" });
+    if (!data.user) throw redirect({ to: "/admin-login" });
 
     const { error: claimError } = await supabase.rpc("claim_first_admin");
     if (claimError) {
