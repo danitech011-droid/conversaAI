@@ -1,4 +1,4 @@
-const CACHE_NAME = "conversaai-shell-v2";
+const CACHE_NAME = "conversaai-shell-v3";
 const APP_SHELL = ["/", "/manifest.webmanifest", "/conversai-mark.svg", "/favicon.svg"];
 
 self.addEventListener("install", (event) => {

@@ -10,12 +10,6 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/conversai-mark.svg",
-      "sizes": "120x120",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    },
-    {
       "src": "/favicon.svg",
       "sizes": "40x40",
       "type": "image/svg+xml",
