@@ -15,6 +15,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import { THEME_BOOTSTRAP_SCRIPT, ThemeProvider } from "@/lib/theme";
 import { UiModeProvider } from "@/lib/ui-mode";
 import { Toaster } from "@/components/ui/sonner";
+import { PwaInstallPrompt } from "@/components/pwa/PwaInstallPrompt";
 
 function NotFoundComponent() {
   return (
@@ -89,6 +90,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#1a2e4a" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "default" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -100,6 +105,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml", media: "(prefers-color-scheme: dark)" },
+      { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "apple-touch-icon", href: "/conversai-mark.svg" },
     ],
   }),
   shellComponent: RootShell,
@@ -126,6 +133,12 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      void navigator.serviceWorker.register("/sw.js");
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
@@ -134,6 +147,7 @@ function RootComponent() {
             {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
             <Outlet />
             <Toaster position="top-right" richColors closeButton />
+            <PwaInstallPrompt />
           </UiModeProvider>
         </ThemeProvider>
       </AuthProvider>
