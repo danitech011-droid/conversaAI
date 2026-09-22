@@ -176,6 +176,48 @@ export type Database = {
         }
         Relationships: []
       }
+      website_installations: {
+        Row: {
+          agent_id: string | null
+          created_at: string
+          domain: string
+          id: string
+          is_active: boolean
+          last_seen_at: string | null
+          owner_id: string
+          public_installation_id: string
+          status: string
+          updated_at: string
+          website_url: string
+        }
+        Insert: {
+          agent_id?: string | null
+          created_at?: string
+          domain: string
+          id?: string
+          is_active?: boolean
+          last_seen_at?: string | null
+          owner_id: string
+          public_installation_id?: string
+          status?: string
+          updated_at?: string
+          website_url: string
+        }
+        Update: {
+          agent_id?: string | null
+          created_at?: string
+          domain?: string
+          id?: string
+          is_active?: boolean
+          last_seen_at?: string | null
+          owner_id?: string
+          public_installation_id?: string
+          status?: string
+          updated_at?: string
+          website_url?: string
+        }
+        Relationships: []
+      }
       kb_general: {
         Row: {
           content: string
@@ -559,6 +601,19 @@ export type Database = {
       claim_first_admin: {
         Args: Record<PropertyKey, never>
         Returns: boolean
+      }
+      get_widget_config: {
+        Args: { p_installation_id: string }
+        Returns: {
+          agent_name: string
+          is_active: boolean
+          logo_url: string | null
+          primary_color: string
+          public_installation_id: string
+          secondary_color: string
+          status: string
+          welcome_message: string
+        }[]
       }
     }
     Enums: {

@@ -1,5 +1,32 @@
 # ConversaAI Launch
 
+## Website installations
+
+The website connection layer stores each installation in `website_installations`.
+An authenticated workspace owner creates an installation from **Channels**, enters
+the website URL, and copies the generated script tag. The tag contains only the
+non-sensitive `public_installation_id`; database credentials and AI provider keys
+remain server-side.
+
+The current `public/widget.js` bootstrap requests the safe public configuration
+through `get_widget_config`, which returns the assistant display name, welcome
+message, public branding, and active status. It emits `conversaai:ready` or
+`conversaai:error` for the widget UI to consume and never exposes database errors.
+
+### Local testing
+
+1. Apply the Supabase migration `20260922120000_website_installations.sql`.
+2. Start the app with `npm run dev`.
+3. Open **Channels**, enter a full website URL, and select **Connect website**.
+4. Copy the generated script into a test HTML page. Add `data-conversa-api` to
+	the script when the Supabase API host differs from the widget host.
+
+The installation record is owner-scoped by RLS. The widget configuration RPC only
+returns active installations and safe public fields. Conversation storage, visitor
+sessions, and secure chat request handling are not included yet because this
+repository currently has no persistent conversation/message tables or server-side
+AI pipeline; the existing preview uses the local mock engine.
+
 ConversaAI Sprint 1 – Authentication & Business Onboarding
 
 You are building the first production-ready version of ConversaAI, an AI Customer Engagement Platform that helps businesses automate customer conversations across their website, WhatsApp, and other digital channels.

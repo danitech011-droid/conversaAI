@@ -14,6 +14,7 @@ import {
   Send,
   Settings2,
   XCircle,
+  Copy,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -41,6 +42,13 @@ import {
   type ChannelDefinition,
   type ChannelTestResult,
 } from "@/lib/workspace/api";
+import {
+  createWebsiteInstallation,
+  getEmbedCode,
+  listWebsiteInstallations,
+  setWebsiteInstallationActive,
+  type WebsiteInstallation,
+} from "@/lib/website/installations";
 
 export const Route = createFileRoute("/_authenticated/channels")({
   head: () => ({
@@ -74,11 +82,18 @@ function ChannelsPage() {
   const [active, setActive] = useState<ChannelDefinition | null>(null);
   const [form, setForm] = useState<Record<string, string>>({});
   const [testResult, setTestResult] = useState<ChannelTestResult | null>(null);
+  const [websiteUrl, setWebsiteUrl] = useState("");
+  const [createdInstallation, setCreatedInstallation] = useState<WebsiteInstallation | null>(null);
 
 
   const { data: channels = [], isLoading } = useQuery({
     queryKey: ["workspace", "channels"],
     queryFn: listChannels,
+  });
+
+  const { data: installations = [], isLoading: installationsLoading } = useQuery({
+    queryKey: ["website-installations"],
+    queryFn: listWebsiteInstallations,
   });
 
   const byType = new Map(channels.map((channel) => [channel.channel_type, channel]));
@@ -137,6 +152,24 @@ function ChannelsPage() {
 
   const connectedCount = channels.filter((channel) => channel.status === "connected").length;
 
+  const connectWebsite = useMutation({
+    mutationFn: () => createWebsiteInstallation({ websiteUrl }),
+    onSuccess: (installation) => {
+      setCreatedInstallation(installation);
+      setWebsiteUrl("");
+      queryClient.invalidateQueries({ queryKey: ["website-installations"] });
+      toast.success("Website connection created");
+    },
+    onError: (error: Error) => toast.error("Couldn't connect website", { description: error.message }),
+  });
+
+  const toggleWebsite = useMutation({
+    mutationFn: (installation: WebsiteInstallation) =>
+      setWebsiteInstallationActive(installation, !installation.is_active),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["website-installations"] }),
+    onError: (error: Error) => toast.error("Couldn't update website", { description: error.message }),
+  });
+
 
   return (
     <DashboardLayout title="Channels" description="Where your assistant meets your customers">
@@ -150,6 +183,77 @@ function ChannelsPage() {
             Credentials are stored securely against your workspace. Live message delivery goes live
             once the messaging engine ships — configuration you save now carries over.
           </p>
+        </SectionCard>
+
+        <SectionCard
+          icon={Globe}
+          title="Connect your website"
+          description="Install the assistant on a website you control."
+          actions={
+            <StatusPill tone={installations.some((item) => item.is_active) ? "success" : "neutral"}>
+              {installations.some((item) => item.is_active) ? "Connected" : "Not connected"}
+            </StatusPill>
+          }
+        >
+          <div className="space-y-4">
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <Input
+                value={websiteUrl}
+                placeholder="https://yourbusiness.com"
+                onChange={(event) => setWebsiteUrl(event.target.value)}
+                aria-label="Website URL"
+              />
+              <Button
+                className="gap-2 sm:shrink-0"
+                disabled={connectWebsite.isPending || !websiteUrl.trim()}
+                onClick={() => connectWebsite.mutate()}
+              >
+                {connectWebsite.isPending && <Loader2 className="h-4 w-4 animate-spin" />}
+                Connect website
+              </Button>
+            </div>
+            {installationsLoading ? (
+              <p className="text-sm text-muted-foreground">Loading website connections...</p>
+            ) : (
+              <div className="space-y-3">
+                {[...installations, ...(createdInstallation && !installations.some((item) => item.id === createdInstallation.id) ? [createdInstallation] : [])].map((installation) => (
+                  <div key={installation.id} className="space-y-3 rounded-xl border border-border bg-surface p-4">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div>
+                        <p className="font-medium text-foreground">{installation.domain}</p>
+                        <p className="text-xs text-muted-foreground">Status: {installation.status}</p>
+                      </div>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => toggleWebsite.mutate(installation)}
+                        disabled={toggleWebsite.isPending}
+                      >
+                        {installation.is_active ? "Disable" : "Enable"}
+                      </Button>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <code className="min-w-0 flex-1 break-all rounded-md bg-muted p-2 text-xs text-muted-foreground">
+                        {getEmbedCode(installation)}
+                      </code>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        aria-label="Copy installation code"
+                        title="Copy installation code"
+                        onClick={() => {
+                          void navigator.clipboard.writeText(getEmbedCode(installation));
+                          toast.success("Installation code copied");
+                        }}
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </SectionCard>
 
         {isLoading ? (
