@@ -218,6 +218,117 @@ export type Database = {
         }
         Relationships: []
       }
+      visitors: {
+        Row: {
+          created_at: string
+          id: string
+          installation_id: string
+          last_seen_at: string
+          metadata: Json
+          owner_id: string
+          updated_at: string
+          visitor_public_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          installation_id: string
+          last_seen_at?: string
+          metadata?: Json
+          owner_id: string
+          updated_at?: string
+          visitor_public_id?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          installation_id?: string
+          last_seen_at?: string
+          metadata?: Json
+          owner_id?: string
+          updated_at?: string
+          visitor_public_id?: string
+        }
+        Relationships: []
+      }
+      conversations: {
+        Row: {
+          agent_id: string | null
+          channel: string
+          created_at: string
+          id: string
+          installation_id: string
+          last_message_at: string | null
+          owner_id: string
+          started_at: string
+          status: string
+          updated_at: string
+          visitor_id: string
+        }
+        Insert: {
+          agent_id?: string | null
+          channel?: string
+          created_at?: string
+          id?: string
+          installation_id: string
+          last_message_at?: string | null
+          owner_id: string
+          started_at?: string
+          status?: string
+          updated_at?: string
+          visitor_id: string
+        }
+        Update: {
+          agent_id?: string | null
+          channel?: string
+          created_at?: string
+          id?: string
+          installation_id?: string
+          last_message_at?: string | null
+          owner_id?: string
+          started_at?: string
+          status?: string
+          updated_at?: string
+          visitor_id?: string
+        }
+        Relationships: []
+      }
+      messages: {
+        Row: {
+          channel: string
+          content: string
+          conversation_id: string
+          created_at: string
+          id: string
+          metadata: Json
+          owner_id: string
+          role: string
+          sender_type: string
+        }
+        Insert: {
+          channel?: string
+          content: string
+          conversation_id: string
+          created_at?: string
+          id?: string
+          metadata?: Json
+          owner_id: string
+          role: string
+          sender_type: string
+        }
+        Update: {
+          channel?: string
+          content?: string
+          conversation_id?: string
+          created_at?: string
+          id?: string
+          metadata?: Json
+          owner_id?: string
+          role?: string
+          sender_type?: string
+        }
+        Relationships: []
+      }
       kb_general: {
         Row: {
           content: string

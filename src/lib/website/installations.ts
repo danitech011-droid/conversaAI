@@ -75,7 +75,7 @@ export async function setWebsiteInstallationActive(
 }
 
 export function getWidgetScriptUrl(): string {
-  const configured = import.meta.env.VITE_PUBLIC_APP_URL as string | undefined;
+  const configured = import.meta.env["VITE_PUBLIC_APP_URL"] as string | undefined;
   return `${(configured || window.location.origin).replace(/\/$/, "")}/widget.js`;
 }
 
