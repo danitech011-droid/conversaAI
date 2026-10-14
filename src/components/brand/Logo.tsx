@@ -9,23 +9,17 @@ type LogoProps = {
 export function BrandMark({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 40 40"
-      className={cn("h-9 w-9 shrink-0", className)}
+      viewBox="0 0 220 220"
+      className={cn("h-9 w-9 shrink-0 rounded-[18px] bg-black", className)}
       aria-hidden
     >
-      <defs>
-        <linearGradient id="conversaiIconGrad" x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#1e3a5f" />
-          <stop offset="0.55" stopColor="#2563eb" />
-          <stop offset="1" stopColor="#06b6d4" />
-        </linearGradient>
-      </defs>
-      <rect width="40" height="40" rx="11" fill="url(#conversaiIconGrad)" />
-      <path fill="#fff" d="M12.5 13.5c0-1.7 1.4-3 3-3h9c1.7 0 3 1.3 3 3v7.2c0 1.7-1.3 3-3 3H20l-4.2 3.2c-.5.4-1.3 0-1.3-.6v-2.6c-1.7 0-3-1.3-3-3v-7.2Z" />
-      <circle cx="17.2" cy="17.4" r="1.35" fill="#06b6d4" />
-      <circle cx="20.5" cy="17.4" r="1.35" fill="#06b6d4" />
-      <circle cx="23.8" cy="17.4" r="1.35" fill="#06b6d4" />
-      <path fill="#67e8f9" d="M29.2 9.2 29.9 11 31.8 11.2 30.4 12.4 30.8 14.2 29.2 13.2 27.6 14.2 28 12.4 26.6 11.2 28.5 11Z" />
+      <rect x="0" y="0" width="220" height="220" rx="28" fill="#000000" />
+      <circle cx="110" cy="110" r="82" fill="none" stroke="#ffffff" strokeWidth="18" strokeLinecap="round" />
+      <path
+        d="M54 142c20-13 36-28 51-46l18-26 42 7-4 32-33-10c-7 11-16 22-28 32l-33 17-13 12Z"
+        fill="#ffffff"
+      />
+      <path d="M114 85 168 31l18 16-37 42 48 4-4 20-62-8 10-22Z" fill="#ffffff" />
     </svg>
   );
 }
@@ -33,18 +27,17 @@ export function BrandMark({ className }: { className?: string }) {
 export function Logo({ variant = "full", className }: LogoProps) {
   if (variant === "mark") {
     return (
-      <span className={cn("inline-flex", className)} role="img" aria-label="ClimaxAI">
+      <span className={cn("inline-flex", className)} role="img" aria-label="CLIMAX-AI">
         <BrandMark className="h-8 w-8" />
       </span>
     );
   }
 
   return (
-    <img
-      src="/conversai-logo.svg"
-      alt="ClimaxAI — Your Business Never Sleeps"
-      className={cn("inline-block w-52 max-w-full object-contain", className)}
-    />
+    <div className={cn("flex items-center gap-4", className)} role="img" aria-label="CLIMAX-AI">
+      <BrandMark className="h-16 w-16 text-foreground" />
+      <span className="select-none text-4xl font-black tracking-[-0.08em] text-foreground">CLIMAX-AI</span>
+    </div>
   );
 }
 
@@ -53,11 +46,11 @@ export function LogoLockup({ className }: { className?: string }) {
     <span
       className={cn("inline-flex h-8 items-center gap-2.5 sm:h-9", className)}
       role="img"
-      aria-label="ClimaxAI"
+      aria-label="CLIMAX-AI"
     >
       <BrandMark className="h-8 w-8 rounded-[10px] sm:h-9 sm:w-9" />
-      <span className="select-none text-[1.05rem] font-bold tracking-tight text-navy dark:text-slate-50">
-        Climax<span className="text-cyan">AI</span>
+      <span className="select-none text-[1.05rem] font-black tracking-[-0.06em] text-foreground">
+        CLIMAX-AI
       </span>
     </span>
   );

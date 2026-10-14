@@ -54,5 +54,5 @@ export function AdminLayout({ children }: { children: ReactNode }) {
 }
 
 function AdminBrand() {
-  return <Link to="/admin" className="flex items-center gap-3" aria-label="Admin dashboard"><Logo variant="mark" className="h-10 w-10" /><span className={cn("text-lg font-bold tracking-tight text-navy dark:text-slate-50")}>Climax<span className="text-cyan">AI</span></span></Link>;
+  return <Link to="/admin" className="flex items-center gap-3" aria-label="Admin dashboard"><Logo variant="mark" className="h-10 w-10" /><span className={cn("text-lg font-bold tracking-tight text-navy dark:text-slate-50")}>CLIMAX-AI</span></Link>;
 }

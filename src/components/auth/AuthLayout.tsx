@@ -29,7 +29,7 @@ export function AuthLayout({ title, description, children, footer }: AuthLayoutP
           <span className="flex flex-col items-center gap-3">
             <Logo variant="mark" className="h-14 w-14 drop-shadow-[0_10px_24px_rgba(37,99,235,0.2)]" />
             <span className="text-lg font-bold tracking-tight text-navy dark:text-slate-50">
-              Climax<span className="text-cyan">AI</span>
+              CLIMAX-AI
             </span>
           </span>
         </Link>
