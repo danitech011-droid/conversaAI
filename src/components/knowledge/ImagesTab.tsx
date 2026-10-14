@@ -242,7 +242,7 @@ export function ImagesTab({ autoCreate = false }: { autoCreate?: boolean } = {})
           label="Caption (optional)"
           value={form.caption}
           onChange={(value) => setForm({ ...form, caption: value })}
-          placeholder="What should ConversaAI know about this image?"
+          placeholder="What should ClimaxAI know about this image?"
         />
       </KbDialog>
 

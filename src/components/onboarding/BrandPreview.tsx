@@ -34,7 +34,7 @@ export function BrandPreview({
           <p className="truncate text-sm font-semibold text-white">
             {companyName || "Your company"}
           </p>
-          <p className="text-xs text-white/80">Powered by ConversaAI</p>
+          <p className="text-xs text-white/80">Powered by ClimaxAI</p>
         </div>
       </div>
 

@@ -35,7 +35,7 @@ export function PwaInstallPrompt() {
         <Download className="h-4 w-4" />
       </span>
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-semibold text-foreground">Install ConversaAI</p>
+        <p className="text-sm font-semibold text-foreground">Install ClimaxAI</p>
         <p className="mt-0.5 text-xs text-muted-foreground">Keep your workspace one tap away.</p>
       </div>
       <Button size="sm" onClick={install}>Install</Button>

@@ -15,10 +15,10 @@ import { friendlyAuthError, resolvePostLoginPath } from "@/lib/auth-helpers";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Sign in — ConversaAI" },
-      { name: "description", content: "Sign in to your ConversaAI workspace." },
-      { property: "og:title", content: "Sign in — ConversaAI" },
-      { property: "og:description", content: "Access your ConversaAI workspace." },
+      { title: "Sign in — ClimaxAI" },
+      { name: "description", content: "Sign in to your ClimaxAI workspace." },
+      { property: "og:title", content: "Sign in — ClimaxAI" },
+      { property: "og:description", content: "Access your ClimaxAI workspace." },
     ],
   }),
   component: LoginPage,

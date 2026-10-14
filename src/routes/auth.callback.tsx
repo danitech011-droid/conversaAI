@@ -10,8 +10,8 @@ export const Route = createFileRoute("/auth/callback")({
   ssr: false,
   head: () => ({
     meta: [
-      { title: "Signing you in — ConversaAI" },
-      { name: "description", content: "Finishing Google sign-in for your ConversaAI workspace." },
+      { title: "Signing you in — ClimaxAI" },
+      { name: "description", content: "Finishing Google sign-in for your ClimaxAI workspace." },
     ],
   }),
   component: AuthCallbackPage,

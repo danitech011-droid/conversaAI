@@ -66,7 +66,7 @@ function AdminPage() {
     <AdminLayout>
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-sm font-medium text-cyan">ConversaAI operations</p>
+          <p className="text-sm font-medium text-cyan">ClimaxAI operations</p>
           <h1 className="mt-1 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">See what is happening across your website</h1>
         </div>
         <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground"><span className="h-2 w-2 rounded-full bg-emerald-400" />Live data</span>

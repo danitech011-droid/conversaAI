@@ -27,7 +27,23 @@ function createSupabaseFetch(supabaseKey: string): typeof fetch {
 }
 
 
+export function isSupabaseConfigured(): boolean {
+  const SUPABASE_URL = import.meta.env['VITE_SUPABASE_URL'] || process.env['SUPABASE_URL'];
+  const SUPABASE_PUBLISHABLE_KEY =
+    import.meta.env['VITE_SUPABASE_KEY'] ||
+    import.meta.env['VITE_SUPABASE_PUBLISHABLE_KEY'] ||
+    process.env['SUPABASE_PUBLISHABLE_KEY'];
+
+  return Boolean(SUPABASE_URL && SUPABASE_PUBLISHABLE_KEY);
+}
+
 function createSupabaseClient() {
+  console.log('[Supabase debug]', {
+    viteUrl: import.meta.env['VITE_SUPABASE_URL'],
+    viteKey: import.meta.env['VITE_SUPABASE_KEY'],
+    allKeys: Object.keys(import.meta.env).filter((k) => k.toLowerCase().includes('supabase')),
+  });
+
   // Use import.meta.env for client-side (Vite build-time replacement)
   // Fall back to process.env for SSR (server-side rendering)
   const SUPABASE_URL = import.meta.env['VITE_SUPABASE_URL'] || process.env['SUPABASE_URL'];
@@ -42,8 +58,20 @@ function createSupabaseClient() {
       ...(!SUPABASE_PUBLISHABLE_KEY ? ['SUPABASE_PUBLISHABLE_KEY'] : []),
     ];
     const message = `Missing Supabase environment variable(s): ${missing.join(', ')}. Connect Supabase in Lovable Cloud.`;
-    console.error(`[Supabase] ${message}`);
-    throw new Error(message);
+    console.warn(`[Supabase] ${message} Falling back to a disabled client so the app can still render.`);
+
+    return createClient<Database>('https://placeholder.supabase.co', 'placeholder-key', {
+      global: {
+        fetch: createSupabaseFetch('placeholder-key'),
+      },
+      auth: {
+        storage: typeof window !== 'undefined' ? localStorage : undefined,
+        persistSession: false,
+        autoRefreshToken: false,
+        detectSessionInUrl: false,
+        flowType: 'pkce',
+      },
+    });
   }
 
   return createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {

@@ -33,7 +33,7 @@ export function BrandMark({ className }: { className?: string }) {
 export function Logo({ variant = "full", className }: LogoProps) {
   if (variant === "mark") {
     return (
-      <span className={cn("inline-flex", className)} role="img" aria-label="ConversaAI">
+      <span className={cn("inline-flex", className)} role="img" aria-label="ClimaxAI">
         <BrandMark className="h-8 w-8" />
       </span>
     );
@@ -42,7 +42,7 @@ export function Logo({ variant = "full", className }: LogoProps) {
   return (
     <img
       src="/conversai-logo.svg"
-      alt="ConversaAI — Your Business Never Sleeps"
+      alt="ClimaxAI — Your Business Never Sleeps"
       className={cn("inline-block w-52 max-w-full object-contain", className)}
     />
   );
@@ -53,11 +53,11 @@ export function LogoLockup({ className }: { className?: string }) {
     <span
       className={cn("inline-flex h-8 items-center gap-2.5 sm:h-9", className)}
       role="img"
-      aria-label="ConversaAI"
+      aria-label="ClimaxAI"
     >
       <BrandMark className="h-8 w-8 rounded-[10px] sm:h-9 sm:w-9" />
       <span className="select-none text-[1.05rem] font-bold tracking-tight text-navy dark:text-slate-50">
-        Conversa<span className="text-cyan">AI</span>
+        Climax<span className="text-cyan">AI</span>
       </span>
     </span>
   );

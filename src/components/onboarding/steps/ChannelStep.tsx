@@ -121,7 +121,7 @@ export function ChannelStep({
                 </div>
                 <p className="mt-1 text-sm text-muted-foreground">
                   {channel.type === "web"
-                    ? "Add ConversaAI to your website."
+                    ? "Add ClimaxAI to your website."
                     : "Connect your WhatsApp Business account."}
                 </p>
                 <Button

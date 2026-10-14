@@ -13,8 +13,8 @@ import { friendlyAuthError } from "@/lib/auth-helpers";
 export const Route = createFileRoute("/admin-login")({
   head: () => ({
     meta: [
-      { title: "Admin access — ConversaAI" },
-      { name: "description", content: "Sign in to the ConversaAI admin workspace." },
+      { title: "Admin access — ClimaxAI" },
+      { name: "description", content: "Sign in to the ClimaxAI admin workspace." },
     ],
   }),
   component: AdminLoginPage,
@@ -68,7 +68,7 @@ function AdminLoginPage() {
     <AuthLayout
       title={mode === "login" ? "Admin access" : "Create the admin account"}
       description={mode === "login" ? "Sign in to manage leads and website activity." : "The first account created receives admin access."}
-      footer={<Link to="/" className="font-medium text-primary hover:underline">Back to ConversaAI</Link>}
+      footer={<Link to="/" className="font-medium text-primary hover:underline">Back to ClimaxAI</Link>}
     >
       <div className="mb-6 flex items-center gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4 text-sm text-muted-foreground">
         <LockKeyhole className="h-5 w-5 shrink-0 text-primary" />

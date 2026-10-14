@@ -25,14 +25,14 @@ import { getKnowledgeCounts, loadKnowledgeChunks } from "@/lib/knowledge/api";
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
     meta: [
-      { title: "Dashboard — ConversaAI" },
+      { title: "Dashboard — ClimaxAI" },
       {
         name: "description",
         content:
           "Track your Knowledge Base coverage, recent updates and next steps for your AI assistant.",
       },
-      { property: "og:title", content: "Dashboard — ConversaAI" },
-      { property: "og:description", content: "Your ConversaAI workspace at a glance." },
+      { property: "og:title", content: "Dashboard — ClimaxAI" },
+      { property: "og:description", content: "Your ClimaxAI workspace at a glance." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

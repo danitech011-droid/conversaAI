@@ -62,4 +62,4 @@ export const DEFAULT_DRAFT: OnboardingDraft = {
 };
 
 export const METADATA_KEY = "conversa_onboarding";
-export const STORAGE_PREFIX = "conversaai-onboarding:";
+export const STORAGE_PREFIX = "climaxai-onboarding:";

@@ -6,13 +6,13 @@
 
   var installationId = script.getAttribute("data-conversa-installation");
   if (!installationId) {
-    console.warn("ConversaAI: missing data-conversa-installation.");
+    console.warn("ClimaxAI: missing data-conversa-installation.");
     return;
   }
 
   var apiBase = script.getAttribute("data-conversa-api") || script.src.replace(/\/widget\.js(?:\?.*)?$/, "");
   apiBase = apiBase.replace(/\/$/, "");
-  var storageKey = "conversaai:" + installationId;
+  var storageKey = "climaxai:" + installationId;
   var configUrl = apiBase + "/api/widget/config?installation_id=" + encodeURIComponent(installationId);
   var chatUrl = apiBase + "/api/widget/chat";
   var state = { config: null, visitorId: null, conversationId: null, messages: [] };
@@ -50,35 +50,35 @@
 
   function addStyles() {
     var style = document.createElement("style");
-    style.textContent = ".conversaai-launcher{position:fixed;right:20px;bottom:20px;z-index:2147483646;border:0;border-radius:999px;padding:12px 18px;background:var(--conversaai-primary,#2563eb);color:#fff;box-shadow:0 8px 24px #0002;font:600 14px system-ui;cursor:pointer}.conversaai-panel{position:fixed;right:20px;bottom:76px;z-index:2147483646;width:min(360px,calc(100vw - 32px));border:1px solid #e2e8f0;border-radius:14px;background:#fff;box-shadow:0 12px 40px #0003;font:14px system-ui;color:#0f172a;overflow:hidden}.conversaai-head{padding:14px 16px;background:var(--conversaai-primary,#2563eb);color:#fff;font-weight:700}.conversaai-log{height:260px;overflow:auto;padding:12px;background:#f8fafc}.conversaai-msg{max-width:85%;margin:0 0 8px;padding:8px 10px;border-radius:10px;line-height:1.4;white-space:pre-wrap}.conversaai-user{margin-left:auto;background:#dbeafe}.conversaai-assistant{background:#fff;border:1px solid #e2e8f0}.conversaai-form{display:flex;gap:8px;padding:10px;border-top:1px solid #e2e8f0}.conversaai-input{min-width:0;flex:1;border:1px solid #cbd5e1;border-radius:8px;padding:9px}.conversaai-send{border:0;border-radius:8px;padding:0 12px;background:var(--conversaai-primary,#2563eb);color:#fff;font-weight:600}.conversaai-send:disabled{opacity:.5}";
+    style.textContent = ".climaxai-launcher{position:fixed;right:20px;bottom:20px;z-index:2147483646;border:0;border-radius:999px;padding:12px 18px;background:var(--climaxai-primary,#2563eb);color:#fff;box-shadow:0 8px 24px #0002;font:600 14px system-ui;cursor:pointer}.climaxai-panel{position:fixed;right:20px;bottom:76px;z-index:2147483646;width:min(360px,calc(100vw - 32px));border:1px solid #e2e8f0;border-radius:14px;background:#fff;box-shadow:0 12px 40px #0003;font:14px system-ui;color:#0f172a;overflow:hidden}.climaxai-head{padding:14px 16px;background:var(--climaxai-primary,#2563eb);color:#fff;font-weight:700}.climaxai-log{height:260px;overflow:auto;padding:12px;background:#f8fafc}.climaxai-msg{max-width:85%;margin:0 0 8px;padding:8px 10px;border-radius:10px;line-height:1.4;white-space:pre-wrap}.climaxai-user{margin-left:auto;background:#dbeafe}.climaxai-assistant{background:#fff;border:1px solid #e2e8f0}.climaxai-form{display:flex;gap:8px;padding:10px;border-top:1px solid #e2e8f0}.climaxai-input{min-width:0;flex:1;border:1px solid #cbd5e1;border-radius:8px;padding:9px}.climaxai-send{border:0;border-radius:8px;padding:0 12px;background:var(--climaxai-primary,#2563eb);color:#fff;font-weight:600}.climaxai-send:disabled{opacity:.5}";
     document.head.appendChild(style);
   }
 
   function render(config) {
     addStyles();
     var root = document.createElement("div");
-    root.style.setProperty("--conversaai-primary", config.primary_color || "#2563EB");
+    root.style.setProperty("--climaxai-primary", config.primary_color || "#2563EB");
     var launcher = document.createElement("button");
-    launcher.className = "conversaai-launcher";
+    launcher.className = "climaxai-launcher";
     launcher.type = "button";
     launcher.textContent = config.agent_name || "Chat with us";
     var panel = document.createElement("section");
-    panel.className = "conversaai-panel";
+    panel.className = "climaxai-panel";
     panel.hidden = true;
-    panel.innerHTML = "<div class=\"conversaai-head\"></div><div class=\"conversaai-log\"></div><form class=\"conversaai-form\"><input class=\"conversaai-input\" maxlength=\"4000\" placeholder=\"Type a message...\"><button class=\"conversaai-send\" type=\"submit\">Send</button></form>";
+    panel.innerHTML = "<div class=\"climaxai-head\"></div><div class=\"climaxai-log\"></div><form class=\"climaxai-form\"><input class=\"climaxai-input\" maxlength=\"4000\" placeholder=\"Type a message...\"><button class=\"climaxai-send\" type=\"submit\">Send</button></form>";
     root.appendChild(launcher);
     root.appendChild(panel);
     document.body.appendChild(root);
-    var head = panel.querySelector(".conversaai-head");
-    var log = panel.querySelector(".conversaai-log");
-    var form = panel.querySelector(".conversaai-form");
-    var input = panel.querySelector(".conversaai-input");
-    var send = panel.querySelector(".conversaai-send");
-    head.textContent = config.agent_name || "ConversaAI Assistant";
+    var head = panel.querySelector(".climaxai-head");
+    var log = panel.querySelector(".climaxai-log");
+    var form = panel.querySelector(".climaxai-form");
+    var input = panel.querySelector(".climaxai-input");
+    var send = panel.querySelector(".climaxai-send");
+    head.textContent = config.agent_name || "ClimaxAI Assistant";
 
     function append(role, text) {
       var item = document.createElement("div");
-      item.className = "conversaai-msg " + (role === "user" ? "conversaai-user" : "conversaai-assistant");
+      item.className = "climaxai-msg " + (role === "user" ? "climaxai-user" : "climaxai-assistant");
       item.textContent = text;
       log.appendChild(item);
       log.scrollTop = log.scrollHeight;
@@ -111,10 +111,10 @@
         }
         if (result.body.success && result.body.message) append("assistant", result.body.message.content);
         else append("assistant", result.body.message || "This chat is temporarily unavailable.");
-        emit("conversaai:message", result.body);
+        emit("climaxai:message", result.body);
       }).catch(function () {
         append("assistant", "This chat is temporarily unavailable.");
-        emit("conversaai:error");
+        emit("climaxai:error");
       }).finally(function () { send.disabled = false; input.focus(); });
     });
   }
@@ -128,10 +128,10 @@
     .then(function (config) {
       if (!config || config.is_active !== true || config.status !== "active") throw new Error("installation inactive");
       state.config = config;
-      window.ConversaAI = window.ConversaAI || {};
-      window.ConversaAI.installation = config;
+      window.ClimaxAI = window.ClimaxAI || {};
+      window.ClimaxAI.installation = config;
       render(config);
-      emit("conversaai:ready", config);
+      emit("climaxai:ready", config);
     })
-    .catch(function () { emit("conversaai:error"); });
+    .catch(function () { emit("climaxai:error"); });
 })();

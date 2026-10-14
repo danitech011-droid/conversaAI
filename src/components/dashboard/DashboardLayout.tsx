@@ -143,7 +143,7 @@ export function DashboardLayout({
         )}
       >
         <div className={cn("flex h-16 items-center px-4", collapsed && "justify-center px-0")}>
-          <Link to="/dashboard" aria-label="ConversaAI dashboard">
+          <Link to="/dashboard" aria-label="ClimaxAI dashboard">
             {collapsed ? (
               <Logo variant="mark" className="h-8" />
             ) : (

@@ -53,13 +53,13 @@ import {
 export const Route = createFileRoute("/_authenticated/channels")({
   head: () => ({
     meta: [
-      { title: "Channels — ConversaAI" },
+      { title: "Channels — ClimaxAI" },
       {
         name: "description",
         content:
           "Configure WhatsApp, the website widget, Instagram, Messenger, Telegram and email for your AI assistant.",
       },
-      { property: "og:title", content: "Channels — ConversaAI" },
+      { property: "og:title", content: "Channels — ClimaxAI" },
       { property: "og:description", content: "Connect the places your customers message you." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

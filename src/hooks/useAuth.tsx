@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 
-import { supabase } from "@/integrations/supabase/client";
+import { isSupabaseConfigured, supabase } from "@/integrations/supabase/client";
 
 type AuthContextValue = {
   user: User | null;
@@ -20,6 +20,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!isSupabaseConfigured()) {
+      setSession(null);
+      setLoading(false);
+      return;
+    }
+
     if (typeof window !== "undefined") {
       const { pathname, search, hash } = window.location;
       const params = new URLSearchParams(search);
@@ -33,17 +39,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     }
 
-    const { data: subscription } = supabase.auth.onAuthStateChange((_event, nextSession) => {
-      setSession(nextSession);
-      setLoading(false);
-    });
+    try {
+      const { data: subscription } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+        setSession(nextSession);
+        setLoading(false);
+      });
 
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session);
-      setLoading(false);
-    });
+      supabase.auth
+        .getSession()
+        .then(({ data }) => {
+          setSession(data.session);
+          setLoading(false);
+        })
+        .catch(() => {
+          setSession(null);
+          setLoading(false);
+        });
 
-    return () => subscription.subscription.unsubscribe();
+      return () => subscription.subscription.unsubscribe();
+    } catch {
+      setSession(null);
+      setLoading(false);
+      return undefined;
+    }
   }, []);
 
   const value = useMemo<AuthContextValue>(

@@ -5,7 +5,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
- * ConversaAI design system.
+ * ClimaxAI design system.
  * Premium SaaS aesthetic: trust, simplicity, professionalism, intelligence.
  * All colors are oklch semantic tokens. Never hardcode colors in components.
  */

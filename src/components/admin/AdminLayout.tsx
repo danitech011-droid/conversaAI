@@ -42,7 +42,7 @@ export function AdminLayout({ children }: { children: ReactNode }) {
       <div className="lg:pl-64">
         <header className="sticky top-0 z-30 border-b border-border/70 bg-background/85 backdrop-blur-xl">
           <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-3"><button type="button" className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border lg:hidden" onClick={() => setMobileOpen((open) => !open)} aria-label={mobileOpen ? "Close admin menu" : "Open admin menu"}>{mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}</button><div><p className="text-sm font-semibold">Admin workspace</p><p className="hidden text-xs text-muted-foreground sm:block">ConversaAI operations</p></div></div>
+            <div className="flex items-center gap-3"><button type="button" className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border lg:hidden" onClick={() => setMobileOpen((open) => !open)} aria-label={mobileOpen ? "Close admin menu" : "Open admin menu"}>{mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}</button><div><p className="text-sm font-semibold">Admin workspace</p><p className="hidden text-xs text-muted-foreground sm:block">ClimaxAI operations</p></div></div>
             <div className="flex items-center gap-2"><ThemeToggle /><Button asChild variant="outline" size="sm" className="hidden sm:inline-flex"><Link to="/">View website</Link></Button></div>
           </div>
         </header>
@@ -54,5 +54,5 @@ export function AdminLayout({ children }: { children: ReactNode }) {
 }
 
 function AdminBrand() {
-  return <Link to="/admin" className="flex items-center gap-3" aria-label="Admin dashboard"><Logo variant="mark" className="h-10 w-10" /><span className={cn("text-lg font-bold tracking-tight text-navy dark:text-slate-50")}>Conversa<span className="text-cyan">AI</span></span></Link>;
+  return <Link to="/admin" className="flex items-center gap-3" aria-label="Admin dashboard"><Logo variant="mark" className="h-10 w-10" /><span className={cn("text-lg font-bold tracking-tight text-navy dark:text-slate-50")}>Climax<span className="text-cyan">AI</span></span></Link>;
 }

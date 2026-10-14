@@ -93,7 +93,7 @@ export function KbTransfer() {
   function downloadReport() {
     if (!result) return;
     downloadFile(
-      `conversaai-import-report-${new Date().toISOString().slice(0, 10)}.json`,
+      `climaxai-import-report-${new Date().toISOString().slice(0, 10)}.json`,
       JSON.stringify(result, null, 2),
       "application/json",
     );

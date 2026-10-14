@@ -16,13 +16,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
-      { title: "Features — ConversaAI" },
+      { title: "Features — ClimaxAI" },
       {
         name: "description",
         content:
-          "See how ConversaAI automates customer conversations: omnichannel inbox, WhatsApp, knowledge grounding, handoff and insights.",
+          "See how ClimaxAI automates customer conversations: omnichannel inbox, WhatsApp, knowledge grounding, handoff and insights.",
       },
-      { property: "og:title", content: "Features — ConversaAI" },
+      { property: "og:title", content: "Features — ClimaxAI" },
       {
         property: "og:description",
         content: "Omnichannel AI conversations, knowledge grounding, human handoff and insights.",
@@ -84,7 +84,7 @@ function FeaturesPage() {
             Everything you need to answer customers well
           </h1>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            ConversaAI is built for teams that care about the quality of every reply — fast,
+            ClimaxAI is built for teams that care about the quality of every reply — fast,
             accurate and unmistakably on-brand.
           </p>
         </div>
@@ -111,7 +111,7 @@ function FeaturesPage() {
           />
           <h2 className="relative text-2xl font-semibold tracking-tight">Ready to see it on your site?</h2>
           <p className="relative mt-2 max-w-xl text-sm text-navy-foreground/75">
-            Create your account and complete a short onboarding — we'll shape ConversaAI around your
+            Create your account and complete a short onboarding — we'll shape ClimaxAI around your
             business.
           </p>
           <Button

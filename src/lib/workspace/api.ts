@@ -228,7 +228,7 @@ export const CHANNEL_DEFINITIONS: ChannelDefinition[] = [
     tagline: "Turn support emails into assisted replies.",
     fields: [
       { key: "inbox", label: "Support inbox", placeholder: "support@yourbusiness.com" },
-      { key: "forwarding", label: "Forwarding address", placeholder: "inbox@conversaai.app" },
+      { key: "forwarding", label: "Forwarding address", placeholder: "inbox@climaxai.app" },
     ],
   },
 ];

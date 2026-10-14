@@ -23,7 +23,7 @@ export function AppHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/80 bg-background/75 backdrop-blur-xl">
       <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-4 sm:px-6">
-        <Link to="/" aria-label="ConversaAI home" className="rounded-md">
+        <Link to="/" aria-label="ClimaxAI home" className="rounded-md">
           <LogoLockup />
         </Link>
         <div className="flex items-center gap-3">

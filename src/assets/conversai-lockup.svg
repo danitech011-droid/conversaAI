@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 56" role="img" aria-label="ConversaAI">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 56" role="img" aria-label="ClimaxAI">
   <defs>
     <linearGradient id="c-lockup-gradient" x1="8" y1="6" x2="48" y2="50" gradientUnits="userSpaceOnUse">
       <stop stop-color="#1a2e4a"/>
@@ -19,5 +19,5 @@
     <path fill="#00b8c8" d="M92 18 94.8 24.6 102 25.4 96.5 30.2 98.1 37.2 92 33.4 85.9 37.2 87.5 30.2 82 25.4 89.2 24.6Z"/>
     <path fill="#1a2e4a" d="M104 10 105.4 13.8 109.4 14.2 106.4 16.8 107.2 20.8 104 18.8 100.8 20.8 101.6 16.8 98.6 14.2 102.6 13.8Z"/>
   </g>
-  <text x="62" y="38" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="700" fill="#1a2e4a">Conversa<tspan fill="#00b8c8">AI</tspan></text>
+  <text x="62" y="38" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="700" fill="#1a2e4a">Climax<tspan fill="#00b8c8">AI</tspan></text>
 </svg>

@@ -1,4 +1,4 @@
-# ConversaAI Launch
+# ClimaxAI Launch
 
 ## Website installations
 
@@ -10,8 +10,8 @@ remain server-side.
 
 The current `public/widget.js` bootstrap requests the safe public configuration
 through `get_widget_config`, which returns the assistant display name, welcome
-message, public branding, and active status. It emits `conversaai:ready` or
-`conversaai:error` for the widget UI to consume and never exposes database errors.
+message, public branding, and active status. It emits `climaxai:ready` or
+`climaxai:error` for the widget UI to consume and never exposes database errors.
 
 ### Local testing
 
@@ -27,13 +27,13 @@ sessions, and secure chat request handling are not included yet because this
 repository currently has no persistent conversation/message tables or server-side
 AI pipeline; the existing preview uses the local mock engine.
 
-ConversaAI Sprint 1 – Authentication & Business Onboarding
+ClimaxAI Sprint 1 – Authentication & Business Onboarding
 
-You are building the first production-ready version of ConversaAI, an AI Customer Engagement Platform that helps businesses automate customer conversations across their website, WhatsApp, and other digital channels.
+You are building the first production-ready version of ClimaxAI, an AI Customer Engagement Platform that helps businesses automate customer conversations across their website, WhatsApp, and other digital channels.
 
 Branding
 
-Important: I have attached the official ConversaAI logo.
+Important: I have attached the official ClimaxAI logo.
 
 - Use this logo wherever the brand logo should appear (navbar, authentication pages, onboarding, favicon where appropriate, and loading screen if one exists).
 
@@ -325,7 +325,7 @@ Confirmation
 
 Display:
 
-"Welcome to ConversaAI"
+"Welcome to ClimaxAI"
 
 Explain that the dashboard is being prepared.
 

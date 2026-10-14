@@ -3,7 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 /** Visual density/finish of the dashboard surfaces: "premium" (glass, gradients) or "standard" (flat, compact). */
 export type UiMode = "premium" | "standard";
 
-const STORAGE_KEY = "conversaai-ui-mode";
+const STORAGE_KEY = "climaxai-ui-mode";
 
 type UiModeContextValue = {
   mode: UiMode;

@@ -17,7 +17,7 @@ import type { KbEntity } from "./types";
 /** Import / export helpers for the Knowledge Base (client-side, no server needed). */
 
 export interface KbExportFile {
-  format: "conversaai.kb";
+  format: "climaxai.kb";
   version: 1;
   exported_at: string;
   general: unknown[];
@@ -38,7 +38,7 @@ export async function buildKbExport(): Promise<KbExportFile> {
     listProperties(),
   ]);
   return {
-    format: "conversaai.kb",
+    format: "climaxai.kb",
     version: 1,
     exported_at: new Date().toISOString(),
     general,
@@ -79,7 +79,7 @@ const STAMP = () => new Date().toISOString().slice(0, 10);
 export async function exportKbJson(): Promise<number> {
   const payload = await buildKbExport();
   downloadFile(
-    `conversaai-knowledge-base-${STAMP()}.json`,
+    `climaxai-knowledge-base-${STAMP()}.json`,
     JSON.stringify(payload, null, 2),
     "application/json",
   );
@@ -97,7 +97,7 @@ export async function exportKbCsv(entity: KbEntity): Promise<number> {
   const payload = await buildKbExport();
   const rows = payload[entity] as Record<string, unknown>[];
   if (rows.length === 0) throw new Error("There is nothing to export in this section yet.");
-  downloadFile(`conversaai-${entity}-${STAMP()}.csv`, rowsToCsv(rows), "text/csv");
+  downloadFile(`climaxai-${entity}-${STAMP()}.csv`, rowsToCsv(rows), "text/csv");
   return rows.length;
 }
 
@@ -142,7 +142,7 @@ const list = (value: unknown): string[] =>
           .filter(Boolean)
       : [];
 
-/** Parses a ConversaAI export file and re-creates every valid entry, reporting per-row outcomes. */
+/** Parses a ClimaxAI export file and re-creates every valid entry, reporting per-row outcomes. */
 export async function importKbJson(raw: string, fileName?: string): Promise<ImportResult> {
   const started = Date.now();
   let parsed: unknown;
@@ -157,7 +157,7 @@ export async function importKbJson(raw: string, fileName?: string): Promise<Impo
   const sections: KbEntity[] = ["general", "faqs", "products", "services", "images", "properties"];
   if (!sections.some((section) => Array.isArray(source[section]))) {
     throw new Error(
-      "No knowledge base sections found. Export a backup from ConversaAI and import that file.",
+      "No knowledge base sections found. Export a backup from ClimaxAI and import that file.",
     );
   }
 

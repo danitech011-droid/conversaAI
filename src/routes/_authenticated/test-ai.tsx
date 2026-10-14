@@ -15,13 +15,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/_authenticated/test-ai")({
   head: () => ({
     meta: [
-      { title: "Test AI — ConversaAI" },
+      { title: "Test AI — ClimaxAI" },
       {
         name: "description",
         content:
           "Preview how your assistant will answer customers using your Knowledge Base, in mock mode.",
       },
-      { property: "og:title", content: "Test AI — ConversaAI" },
+      { property: "og:title", content: "Test AI — ClimaxAI" },
       { property: "og:description", content: "Mock chat preview powered by your Knowledge Base." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -41,7 +41,7 @@ type Message = {
 const WELCOME: Message = {
   id: "welcome",
   role: "assistant",
-  text: "Hi! I'm your ConversaAI assistant running in mock mode. Ask me anything about your business and I'll answer from your Knowledge Base.",
+  text: "Hi! I'm your ClimaxAI assistant running in mock mode. Ask me anything about your business and I'll answer from your Knowledge Base.",
 };
 
 const SUGGESTIONS = [

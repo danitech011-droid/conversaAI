@@ -123,7 +123,7 @@ export function GeneralTab({ autoCreate = false }: { autoCreate?: boolean } = {}
         <EmptyState
           icon={FileText}
           title="No general information yet."
-          description="Add details about your organization so ConversaAI can answer accurately."
+          description="Add details about your organization so ClimaxAI can answer accurately."
           actionLabel="Add information"
           onAction={openCreate}
         />
@@ -169,7 +169,7 @@ export function GeneralTab({ autoCreate = false }: { autoCreate?: boolean } = {}
           label="Content"
           value={form.content}
           onChange={(value) => setForm({ ...form, content: value })}
-          placeholder="Tell ConversaAI what customers should know…"
+          placeholder="Tell ClimaxAI what customers should know…"
           rows={6}
         />
         <SelectInput

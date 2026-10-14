@@ -8,13 +8,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — ConversaAI" },
+      { title: "Pricing — ClimaxAI" },
       {
         name: "description",
         content:
-          "Simple ConversaAI pricing: start free, scale with Growth, or go bespoke with Enterprise support.",
+          "Simple ClimaxAI pricing: start free, scale with Growth, or go bespoke with Enterprise support.",
       },
-      { property: "og:title", content: "Pricing — ConversaAI" },
+      { property: "og:title", content: "Pricing — ClimaxAI" },
       {
         property: "og:description",
         content: "Start free and scale your AI customer engagement as your conversations grow.",

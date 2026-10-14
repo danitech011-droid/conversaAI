@@ -22,11 +22,11 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ConversaAI - AI Customer Engagement" },
+      { title: "ClimaxAI - AI Customer Engagement" },
       {
         name: "description",
         content:
-          "ConversaAI helps businesses respond instantly on their website and WhatsApp, 24/7.",
+          "ClimaxAI helps businesses respond instantly on their website and WhatsApp, 24/7.",
       },
     ],
   }),
@@ -100,7 +100,7 @@ function HomePage() {
               AI That Helps Your Business <span className="text-gradient-brand">Never Sleep</span>
             </h1>
             <p className="mt-7 max-w-lg animate-slide-up text-lg leading-relaxed text-muted-foreground sm:text-xl" style={{ animationDelay: "80ms" }}>
-              ConversaAI is an AI-powered customer engagement platform that helps businesses respond instantly on their website and WhatsApp - answering questions, recommending products, qualifying leads, and providing support 24/7.
+              ClimaxAI is an AI-powered customer engagement platform that helps businesses respond instantly on their website and WhatsApp - answering questions, recommending products, qualifying leads, and providing support 24/7.
             </p>
             <div className="mt-9 flex animate-slide-up flex-col gap-3 sm:flex-row" style={{ animationDelay: "140ms" }}>
               <Button asChild size="lg" className="h-13 px-6 shadow-[var(--shadow-card)]">
@@ -125,7 +125,7 @@ function HomePage() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan">Every Industry</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground">Trusted for every business</h2>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">From storefronts to enterprises, ConversaAI adapts to how your industry talks with customers.</p>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">From storefronts to enterprises, ClimaxAI adapts to how your industry talks with customers.</p>
           </div>
           <div className="flex flex-wrap gap-2 lg:justify-end">
             {INDUSTRIES.map((industry, index) => <IndustryChip key={industry} label={industry} featured={index === 0} />)}
@@ -161,7 +161,7 @@ function HomePage() {
       <section className="border-b border-border/70" id="product">
         <div className="mx-auto grid w-full max-w-6xl gap-14 px-4 py-24 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
-            <SectionIntro eyebrow="Product" title="A closer look inside ConversaAI" body="Real screens from the product - designed for clarity, speed, and control." />
+            <SectionIntro eyebrow="Product" title="A closer look inside ClimaxAI" body="Real screens from the product - designed for clarity, speed, and control." />
             <Button asChild variant="outline" className="mt-8"><Link to="/features">Explore the product <ArrowRight className="h-4 w-4" /></Link></Button>
           </div>
           <ProductDashboardPreview />
@@ -171,13 +171,13 @@ function HomePage() {
       <section className="border-b border-border/70 bg-navy text-navy-foreground">
         <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan">Why ConversaAI</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan">Why ClimaxAI</p>
             <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">The difference is night and day</h2>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-slate-300">Smarter customer engagement means faster answers, more qualified leads, and a team that can focus on the conversations that matter.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <ComparisonColumn title="Without ConversaAI" items={WITHOUT} muted />
-            <ComparisonColumn title="With ConversaAI" items={WITH} />
+            <ComparisonColumn title="Without ClimaxAI" items={WITHOUT} muted />
+            <ComparisonColumn title="With ClimaxAI" items={WITH} />
           </div>
         </div>
       </section>
@@ -189,7 +189,7 @@ function HomePage() {
             <div className="relative mx-auto max-w-2xl">
               <Sparkles className="mx-auto h-7 w-7 text-cyan" />
               <h2 className="mt-5 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Ready to transform your customer experience?</h2>
-              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">Join businesses preparing for the future of customer engagement with ConversaAI.</p>
+              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">Join businesses preparing for the future of customer engagement with ClimaxAI.</p>
               <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><Button asChild size="lg"><Link to="/register">Get started <ArrowRight className="h-4 w-4" /></Link></Button><Button asChild size="lg" variant="outline"><Link to="/contact">Contact Us</Link></Button></div>
             </div>
           </div>
@@ -199,7 +199,7 @@ function HomePage() {
       <section className="bg-surface/50" id="contact">
         <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <SectionIntro eyebrow="Contact" title="Let's talk about your business" body="Tell us a little about you and we'll show you how ConversaAI fits into your customer workflow." />
+            <SectionIntro eyebrow="Contact" title="Let's talk about your business" body="Tell us a little about you and we'll show you how ClimaxAI fits into your customer workflow." />
             <div className="mt-8 space-y-4 text-sm text-muted-foreground">
               <ContactLine label="Email us" value="danitech011@gmail.com" />
               <ContactLine label="Chat on WhatsApp" value="+234 912 880 2572" />
@@ -226,7 +226,7 @@ function FeatureCard({ icon: Icon, title, body, featured }: (typeof FEATURES)[nu
 }
 
 function HeroProductPreview() {
-  return <div className="relative"><div className="absolute -inset-8 rounded-[3rem] bg-primary/15 blur-3xl" aria-hidden /><div className="relative space-y-4"><MiniChat channel="yourbusiness.com" question="Hi! Looking for a 2-bed apartment downtown?" answer="Yes, budget around $1,800." result="Great - I found 3 matches. Want to book a viewing?" /><MiniChat channel="ConversaAI" question="Hello 👋 Do you deliver on Sundays?" answer="Yes! Between 10am - 6pm. Free over $30." result="Perfect. Can I order the family combo?" /></div></div>;
+  return <div className="relative"><div className="absolute -inset-8 rounded-[3rem] bg-primary/15 blur-3xl" aria-hidden /><div className="relative space-y-4"><MiniChat channel="yourbusiness.com" question="Hi! Looking for a 2-bed apartment downtown?" answer="Yes, budget around $1,800." result="Great - I found 3 matches. Want to book a viewing?" /><MiniChat channel="ClimaxAI" question="Hello 👋 Do you deliver on Sundays?" answer="Yes! Between 10am - 6pm. Free over $30." result="Perfect. Can I order the family combo?" /></div></div>;
 }
 
 function MiniChat({ channel, question, answer, result }: { channel: string; question: string; answer: string; result: string }) {
@@ -254,5 +254,5 @@ function ContactLine({ label, value }: { label: string; value: string }) {
 }
 
 function ContactFormPreview() {
-  return <div className="rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] sm:p-8"><div className="rounded-2xl bg-surface p-5"><p className="text-sm font-semibold text-foreground">Tell us about your customer workflow</p><p className="mt-2 text-sm leading-relaxed text-muted-foreground">Share your goals, channels, and current support setup. Your message goes directly to the ConversaAI admin workspace.</p><div className="mt-5 grid gap-3 sm:grid-cols-2"><div className="h-11 rounded-xl border border-border bg-background" /><div className="h-11 rounded-xl border border-border bg-background" /><div className="h-11 rounded-xl border border-border bg-background sm:col-span-2" /><div className="h-24 rounded-xl border border-border bg-background sm:col-span-2" /></div></div><Button asChild className="mt-5 w-full sm:w-auto"><Link to="/contact">Open contact form <ArrowRight className="h-4 w-4" /></Link></Button></div>;
+  return <div className="rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] sm:p-8"><div className="rounded-2xl bg-surface p-5"><p className="text-sm font-semibold text-foreground">Tell us about your customer workflow</p><p className="mt-2 text-sm leading-relaxed text-muted-foreground">Share your goals, channels, and current support setup. Your message goes directly to the ClimaxAI admin workspace.</p><div className="mt-5 grid gap-3 sm:grid-cols-2"><div className="h-11 rounded-xl border border-border bg-background" /><div className="h-11 rounded-xl border border-border bg-background" /><div className="h-11 rounded-xl border border-border bg-background sm:col-span-2" /><div className="h-24 rounded-xl border border-border bg-background sm:col-span-2" /></div></div><Button asChild className="mt-5 w-full sm:w-auto"><Link to="/contact">Open contact form <ArrowRight className="h-4 w-4" /></Link></Button></div>;
 }

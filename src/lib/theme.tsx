@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useLayoutEffect, useState, type
 
 export type Theme = "light" | "dark";
 
-const STORAGE_KEY = "conversaai-theme";
+const STORAGE_KEY = "climaxai-theme";
 
 type ThemeContextValue = {
   theme: Theme;

@@ -11,9 +11,9 @@ import { resolvePostLoginPath } from "@/lib/auth-helpers";
 export const Route = createFileRoute("/verify-email")({
   head: () => ({
     meta: [
-      { title: "Email verified — ConversaAI" },
-      { name: "description", content: "Your ConversaAI email address has been verified." },
-      { property: "og:title", content: "Email verified — ConversaAI" },
+      { title: "Email verified — ClimaxAI" },
+      { name: "description", content: "Your ClimaxAI email address has been verified." },
+      { property: "og:title", content: "Email verified — ClimaxAI" },
       { property: "og:description", content: "Your account is confirmed and ready to use." },
     ],
   }),
@@ -47,7 +47,7 @@ function VerifyEmailPage() {
       title={verified ? "Email verified" : "Verify your email"}
       description={
         verified
-          ? "Your ConversaAI account is confirmed and ready to go."
+          ? "Your ClimaxAI account is confirmed and ready to go."
           : "Open the confirmation link we emailed you to activate your account."
       }
     >

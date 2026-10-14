@@ -15,16 +15,16 @@ import { supabase } from "@/integrations/supabase/client";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — ConversaAI" },
+      { title: "Contact — ClimaxAI" },
       {
         name: "description",
         content:
-          "Talk to the ConversaAI team about automating customer conversations for your business.",
+          "Talk to the ClimaxAI team about automating customer conversations for your business.",
       },
-      { property: "og:title", content: "Contact — ConversaAI" },
+      { property: "og:title", content: "Contact — ClimaxAI" },
       {
         property: "og:description",
-        content: "Questions about ConversaAI? Send the team a message.",
+        content: "Questions about ClimaxAI? Send the team a message.",
       },
     ],
   }),
@@ -93,12 +93,12 @@ function ContactPage() {
             Let's talk about your customers
           </h1>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Whether you're evaluating ConversaAI or ready to roll it out, we're happy to help.
+            Whether you're evaluating ClimaxAI or ready to roll it out, we're happy to help.
           </p>
 
           <ul className="mt-8 space-y-4 text-sm">
             {[
-              { icon: Mail, label: "hello@conversaai.app" },
+              { icon: Mail, label: "hello@climaxai.app" },
               { icon: MessageSquare, label: "Average response time: under 4 hours" },
               { icon: MapPin, label: "Remote-first, supporting teams worldwide" },
             ].map((item) => (

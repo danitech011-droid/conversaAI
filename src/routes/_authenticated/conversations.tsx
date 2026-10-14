@@ -6,9 +6,9 @@ import { ComingSoon } from "@/components/dashboard/ComingSoon";
 export const Route = createFileRoute("/_authenticated/conversations")({
   head: () => ({
     meta: [
-      { title: "Conversations — ConversaAI" },
+      { title: "Conversations — ClimaxAI" },
       { name: "description", content: "Live conversation inbox for your AI assistant." },
-      { property: "og:title", content: "Conversations — ConversaAI" },
+      { property: "og:title", content: "Conversations — ClimaxAI" },
       { property: "og:description", content: "Live inbox — coming soon." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

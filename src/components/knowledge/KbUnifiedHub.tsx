@@ -109,7 +109,7 @@ export function KbUnifiedHub({
             <EmptyState
               icon={Brain}
               title="Your AI doesn't know much yet."
-              description="Add information about your organization so ConversaAI can provide better answers."
+              description="Add information about your organization so ClimaxAI can provide better answers."
               actionLabel="Add knowledge"
               onAction={() => setAddOpen(true)}
             />

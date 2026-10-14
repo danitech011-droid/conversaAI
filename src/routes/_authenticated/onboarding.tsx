@@ -25,12 +25,12 @@ import {
 export const Route = createFileRoute("/_authenticated/onboarding")({
   head: () => ({
     meta: [
-      { title: "Set up your workspace — ConversaAI" },
+      { title: "Set up your workspace — ClimaxAI" },
       {
         name: "description",
-        content: "Tell ConversaAI about your organisation so we can prepare a personalised workspace.",
+        content: "Tell ClimaxAI about your organisation so we can prepare a personalised workspace.",
       },
-      { property: "og:title", content: "Onboarding — ConversaAI" },
+      { property: "og:title", content: "Onboarding — ClimaxAI" },
       { property: "og:description", content: "Create your organisation’s starting configuration." },
     ],
   }),
@@ -40,14 +40,14 @@ export const Route = createFileRoute("/_authenticated/onboarding")({
 const STEP_COPY = [
   {
     title: "Let's get to know your organization",
-    subtitle: "Tell us a little about your organization so we can personalize your ConversaAI workspace.",
+    subtitle: "Tell us a little about your organization so we can personalize your ClimaxAI workspace.",
   },
   {
     title: "What best describes your organization?",
-    subtitle: "This helps ConversaAI personalize your workspace and recommend the right setup. You can change it later.",
+    subtitle: "This helps ClimaxAI personalize your workspace and recommend the right setup. You can change it later.",
   },
   {
-    title: "What would you like ConversaAI to help with?",
+    title: "What would you like ClimaxAI to help with?",
     subtitle: "Choose everything you'd like your AI assistant to help you accomplish.",
   },
   {
@@ -56,11 +56,11 @@ const STEP_COPY = [
   },
   {
     title: "Help your AI understand your organization",
-    subtitle: "Give ConversaAI the information it needs to provide useful and accurate answers. You can skip this and add knowledge later.",
+    subtitle: "Give ClimaxAI the information it needs to provide useful and accurate answers. You can skip this and add knowledge later.",
   },
   {
     title: "Where should your AI start working?",
-    subtitle: "Choose where you'd like to deploy ConversaAI first. You can connect additional channels later.",
+    subtitle: "Choose where you'd like to deploy ClimaxAI first. You can connect additional channels later.",
   },
   {
     title: "Your AI is ready to meet you",
@@ -204,7 +204,7 @@ function OnboardingPage() {
 
   const step = draft.step;
   const copy = finished
-    ? { title: "You're ready", subtitle: "Your ConversaAI workspace is ready." }
+    ? { title: "You're ready", subtitle: "Your ClimaxAI workspace is ready." }
     : (STEP_COPY[step] ?? STEP_COPY[0]);
 
   const skippable = !finished && (step === 4 || step === 5);

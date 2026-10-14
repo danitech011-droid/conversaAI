@@ -51,12 +51,12 @@ import {
 export const Route = createFileRoute("/_authenticated/team")({
   head: () => ({
     meta: [
-      { title: "Team & roles — ConversaAI" },
+      { title: "Team & roles — ClimaxAI" },
       {
         name: "description",
         content: "Invite teammates, assign roles and control who can manage your AI assistant.",
       },
-      { property: "og:title", content: "Team & roles — ConversaAI" },
+      { property: "og:title", content: "Team & roles — ClimaxAI" },
       { property: "og:description", content: "Manage workspace members and permissions." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -165,7 +165,7 @@ function TeamPage() {
         <SectionCard
           icon={Users}
           title="Workspace members"
-          description="Everyone who can see or manage this ConversaAI workspace."
+          description="Everyone who can see or manage this ClimaxAI workspace."
           actions={
             <Button size="sm" className="gap-2" onClick={openCreate}>
               <Plus className="h-4 w-4" />

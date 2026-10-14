@@ -22,16 +22,16 @@ export const Route = createFileRoute("/_authenticated/knowledge-base")({
   }),
   head: () => ({
     meta: [
-      { title: "Knowledge Base — ConversaAI" },
+      { title: "Knowledge Base — ClimaxAI" },
       {
         name: "description",
         content:
           "Manage the information your AI assistant uses to answer customers accurately.",
       },
-      { property: "og:title", content: "Knowledge Base — ConversaAI" },
+      { property: "og:title", content: "Knowledge Base — ClimaxAI" },
       {
         property: "og:description",
-        content: "Everything ConversaAI knows about your organization lives here.",
+        content: "Everything ClimaxAI knows about your organization lives here.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -69,7 +69,7 @@ function KnowledgeBasePage() {
   return (
     <DashboardLayout
       title="Knowledge Base"
-      description="Teach ConversaAI about your organization"
+      description="Teach ClimaxAI about your organization"
     >
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-muted-foreground">

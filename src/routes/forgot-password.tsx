@@ -14,9 +14,9 @@ import { friendlyAuthError } from "@/lib/auth-helpers";
 export const Route = createFileRoute("/forgot-password")({
   head: () => ({
     meta: [
-      { title: "Reset your password — ConversaAI" },
-      { name: "description", content: "Request a password reset link for your ConversaAI account." },
-      { property: "og:title", content: "Reset your password — ConversaAI" },
+      { title: "Reset your password — ClimaxAI" },
+      { name: "description", content: "Request a password reset link for your ClimaxAI account." },
+      { property: "og:title", content: "Reset your password — ClimaxAI" },
       { property: "og:description", content: "We'll email you a secure reset link." },
     ],
   }),

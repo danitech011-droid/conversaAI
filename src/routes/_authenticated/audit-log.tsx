@@ -32,12 +32,12 @@ import { clearAuditEntries, listAuditEntries } from "@/lib/workspace/api";
 export const Route = createFileRoute("/_authenticated/audit-log")({
   head: () => ({
     meta: [
-      { title: "Audit log — ConversaAI" },
+      { title: "Audit log — ClimaxAI" },
       {
         name: "description",
         content: "Review every change made to your knowledge base, team and channels.",
       },
-      { property: "og:title", content: "Audit log — ConversaAI" },
+      { property: "og:title", content: "Audit log — ClimaxAI" },
       { property: "og:description", content: "A complete activity trail for your workspace." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -135,7 +135,7 @@ function AuditLogPage() {
       return;
     }
     downloadFile(
-      `conversaai-audit-log-${stamp()}.csv`,
+      `climaxai-audit-log-${stamp()}.csv`,
       rowsToCsv(
         filtered.map((entry) => ({
           timestamp: entry.created_at,
@@ -156,7 +156,7 @@ function AuditLogPage() {
       return;
     }
     downloadFile(
-      `conversaai-audit-log-${stamp()}.json`,
+      `climaxai-audit-log-${stamp()}.json`,
       JSON.stringify(
         { exported_at: new Date().toISOString(), filters: { area, action, range, query }, entries: filtered },
         null,

@@ -15,12 +15,12 @@ import { friendlyAuthError, resolvePostLoginPath } from "@/lib/auth-helpers";
 export const Route = createFileRoute("/register")({
   head: () => ({
     meta: [
-      { title: "Create your account — ConversaAI" },
+      { title: "Create your account — ClimaxAI" },
       {
         name: "description",
-        content: "Create a ConversaAI account and start automating customer conversations.",
+        content: "Create a ClimaxAI account and start automating customer conversations.",
       },
-      { property: "og:title", content: "Create your account — ConversaAI" },
+      { property: "og:title", content: "Create your account — ClimaxAI" },
       { property: "og:description", content: "Start automating customer conversations today." },
     ],
   }),
@@ -164,7 +164,7 @@ function RegisterPage() {
   return (
     <AuthLayout
       title="Create your account"
-      description="Set up ConversaAI for your business in a few minutes."
+      description="Set up ClimaxAI for your business in a few minutes."
       footer={
         <>
           Already have an account?{" "}

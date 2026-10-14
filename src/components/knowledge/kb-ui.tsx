@@ -355,7 +355,7 @@ export function DeleteDialog({
         <AlertDialogHeader>
           <AlertDialogTitle>Delete this knowledge?</AlertDialogTitle>
           <AlertDialogDescription>
-            This information will no longer be available to ConversaAI. This action can&apos;t be
+            This information will no longer be available to ClimaxAI. This action can&apos;t be
             undone.
           </AlertDialogDescription>
         </AlertDialogHeader>

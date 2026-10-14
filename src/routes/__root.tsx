@@ -82,11 +82,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ConversaAI — AI Customer Engagement Platform" },
+      { title: "ClimaxAI — AI Customer Engagement Platform" },
       {
         name: "description",
         content:
-          "ConversaAI automates customer conversations across your website, WhatsApp and digital channels. Your business never sleeps.",
+          "ClimaxAI automates customer conversations across your website, WhatsApp and digital channels. Your business never sleeps.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

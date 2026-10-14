@@ -19,7 +19,7 @@ export function AssistantPreview({
   return (
     <div className={cn("overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-soft)]", className)}>
       <div className="flex items-center justify-between border-b border-border px-4 py-3">
-        <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">ConversaAI</p>
+        <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">ClimaxAI</p>
         <span className="rounded-full bg-success/12 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-success">
           Preview
         </span>

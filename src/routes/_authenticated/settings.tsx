@@ -19,13 +19,13 @@ import { useUiMode } from "@/lib/ui-mode";
 export const Route = createFileRoute("/_authenticated/settings")({
   head: () => ({
     meta: [
-      { title: "Settings — ConversaAI" },
+      { title: "Settings — ClimaxAI" },
       {
         name: "description",
         content:
-          "Manage your ConversaAI profile, organisation details, password and appearance preferences.",
+          "Manage your ClimaxAI profile, organisation details, password and appearance preferences.",
       },
-      { property: "og:title", content: "Settings — ConversaAI" },
+      { property: "og:title", content: "Settings — ClimaxAI" },
       { property: "og:description", content: "Profile, organisation and appearance settings." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -160,7 +160,7 @@ function SettingsPage() {
             label="Company name"
             value={org.company_name}
             onChange={(value) => setOrg({ ...org, company_name: value })}
-            placeholder="ConversaAI Ltd"
+            placeholder="ClimaxAI Ltd"
           />
           <SelectInput
             label="Industry"

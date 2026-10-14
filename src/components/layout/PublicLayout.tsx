@@ -30,7 +30,7 @@ export function SiteHeader() {
       >
         <Link
           to="/"
-          aria-label="ConversaAI home"
+          aria-label="ClimaxAI home"
           className="rounded-xl transition-transform hover:scale-[1.01]"
         >
           <LogoLockup />
@@ -163,7 +163,7 @@ export function SiteFooter() {
 
 export function PublicLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const storageKey = "conversaai-visitor-session";
+    const storageKey = "climaxai-visitor-session";
     const sessionId = window.localStorage.getItem(storageKey) ?? crypto.randomUUID();
     window.localStorage.setItem(storageKey, sessionId);
     const deviceType = window.matchMedia("(max-width: 767px)").matches ? "mobile" : "desktop";

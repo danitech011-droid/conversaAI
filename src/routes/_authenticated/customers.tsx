@@ -6,9 +6,9 @@ import { ComingSoon } from "@/components/dashboard/ComingSoon";
 export const Route = createFileRoute("/_authenticated/customers")({
   head: () => ({
     meta: [
-      { title: "Customers — ConversaAI" },
+      { title: "Customers — ClimaxAI" },
       { name: "description", content: "Customer profiles and history for your AI assistant." },
-      { property: "og:title", content: "Customers — ConversaAI" },
+      { property: "og:title", content: "Customers — ClimaxAI" },
       { property: "og:description", content: "Customer profiles — coming soon." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -247,7 +247,7 @@ function WebsiteImport({ website }: { website: string }) {
           checked={confirmed}
           onChange={(event) => setConfirmed(event.target.checked)}
         />
-        I own this website or I am authorised to connect it to ConversaAI.
+        I own this website or I am authorised to connect it to ClimaxAI.
       </label>
       <Button type="button" disabled className="h-11">
         Analyze website
